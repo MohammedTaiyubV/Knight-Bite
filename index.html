@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knight Bite</title>
+    <link rel="icon" href="./images/kb_footer.png">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <img class="logo" src="./images/kb_logo_new_2.png" alt="logo">
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./menu.html">Menu</a></li>
+                <li><a href="./franchise.html">Franchise</a></li>
+            </ul>
+        </nav>
+        <header class="home-header">
+            <h1>Deliciousness, One Click Away!</h1>
+            <a href="#">order on web</a>
+            <p>Or</p>
+           <div>
+            <img src="./images/ios-store.svg" alt="">
+            <img  class="playstore-img" src="./images/google-play-badge.svg" alt="">
+           </div>
+        </header>
+        <section class="features">
+            <h1>Features</h1>
+            <div class="features-inner">
+                <div>
+                    <img src="./images/feature-1.svg" alt="">
+                    <p>Late Night Delivery
+                        Till 4 am</p>
+                </div>
+                <div>
+                    <img src="./images/feature-2.svg" alt="">
+                    <p>Order on App Or Call 080-4710607</p>
+                </div>
+                <div>
+                    <img src="./images/feature-3.svg" alt="">
+                    <p>Delivery within 40 mins</p>
+                </div>
+                <div>
+                    <img src="./images/feature-4.svg" alt="">
+                    <p>Food for every kind of hunger</p>
+                </div>
+                <div>
+                    <img src="./images/feature-5.svg" alt="">
+                    <p>Place Bulk orders through App</p>
+                </div>
+            </div>
+        </section>
+        <section class="burger">
+            <h1>Enjoy food, enjoy life</h1>
+        </section>
+        <section class="shakes">
+            <h1>Burger, fries, shakes and many more</h1>
+                <button id="btn">See Full Menu</button>
+        </section>
+        
+        <div class="footer">
+            <h1>Connect With Us</h1>
+            <div class="footer-details">
+                <div class="footer-item">
+                    <h3>Contact Us</h3>
+                    <div style="display:flex; margin-bottom:40px;">
+                        <div class="footer-mail"></div>
+                        <span>info@Knight-bite.com</span>
+                    </div>
+                    <div style="display:flex; align-items:flex-end;">
+                        <div class="footer-phone"></div>
+                        <span>+91 8047106107</span>
+                    </div>
+                    <span style="font-size:16px; font: weight 300px; margin-left:50px; margin-top:10px;">
+                        Available from 7pm to 4am
+                    </span>
+                </div>
+                <div class="footer-item">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li class="footer-link" >
+                            Marker Policies
+                        </li>
+                        <li class="footer-link" onclick="openLink(`https:/\/knight-bite.com/policies`)">
+                            Privacy Policies
+                        </li>
+                        <li>
+                            Careers - (Coming Soon)
+                        </li>
+                        <li class="footer-link" onclick="openLink(`pages/franchise.html`)">
+                            Franchise
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <p style="width:100%;line-height: 2em; text-align: start;">
+                         Enter your email address below to be the first to know everything about us, where we’ll be next, and how you can come along!
+                        <br>
+                         Join us on our adventure. 
+                    </p>
+                    <div class="email-container">
+                        <input class="email-field" type="text" placeholder="Enter your email address">
+                        <button class="email-btn" onclick="submitEmail()"></button>
+                    </div>
+                    <p style="margin:18px 0;color: #FF5672; font-size:15px" class="dnone" id="success-msg">
+                        
+                    </p>
+                </div>
+                <div class="footer-item">
+                    <h3>Head Office </h3>
+                    <p style="font-weight:300">
+                        "1st Floor, No 20-1-7/10, Regal Square Azizuddin Road, Bunder Mangalore, Bunder, Mangaluru, Dakshina Kannada, Karnataka, 575001"
+                    </p>
+                </div>
+                <div class="footer-item">
+                    <h3>Locations</h3>
+                    <ul>
+                        <li style="font-weight:300">
+                            marker
+                            "Bengaluru, Mangalore, Mysuru, Hyderabad, Hubli, Manipal, Udupi"
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h3>Follow Us</h3>
+                    <div style="display: flex;" class="profile-tags">
+                        <a href="https://www.instagram.com/techwithtaiyub/">
+                            <img src="images/instagram.svg" style="margin-right: 40px;">
+                        </a>
+                        <a href="https://www.facebook.com/kabsha.taiyub.94/">
+                            <img src="images/facebook.svg" style="margin-right: 40px;">
+                        </a>
+                        <a href="https://x.com/Kabsha_taiyub">
+                            <img src="images/icons8-twitter.svg"  style="margin-right: 40px;">
+                        </a>
+                        <a href="https://www.linkedin.com/in/-kabsha-taiyub-2aa726288">
+                            <img src="images/linkedin.svg" style="margin-right: 40px;">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCbUM8v6bBtX8mcVFazJ9IQw">
+                            <img src="images/youtube.svg" style="margin-right: 40px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center; margin: 50px 0;" class="footer-logo">
+                <img src="images/brand_logo-1_footer.svg" style="margin-right: 40px;">
+                <img width="40" src="images/kb_footer.png">  
+            </div>
+            <div class="copyright">
+                <p>
+                    "Ⓒ Copyright "
+                    <span class="year">2025</span>
+                    ". Knight Bite Foods Pvt. Ltd. All Rights Reserved"
+                </p>
+            </div>
+
+        </div>
+</body>
+</html>

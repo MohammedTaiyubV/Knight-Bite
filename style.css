@@ -1,0 +1,1028 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+  background: #fff;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+/* nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px 50px;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+} */
+
+nav {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 92%;
+  max-width: 1450px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px 40px;
+
+  z-index: 9999;
+
+  border-radius: 22px;
+
+  background: rgba(18, 18, 18, 0.72);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 8px 35px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+
+  transition: all 0.4s ease;
+}
+
+/* NAVBAR HOVER EFFECT */
+
+nav:hover {
+  box-shadow:
+    0 12px 45px rgba(255, 86, 114, 0.18),
+    0 8px 35px rgba(0,0,0,0.4);
+}
+
+
+
+/* .logo {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  transition: 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.03);
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  margin-left: auto;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff5672;
+} */
+
+.logo {
+  width: 185px;
+  height: auto;
+  object-fit: contain;
+
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 12px rgba(255, 86, 114, 0.5));
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  list-style: none;
+}
+
+/* EACH NAV ITEM */
+
+.nav-links li {
+  position: relative;
+}
+
+/* NAV LINK DESIGN */
+
+.nav-links a {
+  position: relative;
+
+  display: inline-block;
+
+  padding: 12px 24px;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  overflow: hidden;
+
+  transition: all 0.35s ease;
+
+  background: rgba(255,255,255,0.03);
+
+  border: 1px solid rgba(255,255,255,0.05);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* GLOW BACKGROUND EFFECT */
+
+.nav-links a::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c77bf4 0%,
+      #ff5672 50%,
+      #ff8a00 100%
+    );
+
+  opacity: 0;
+
+  transition: opacity 0.35s ease;
+
+  z-index: -1;
+}
+
+/* HOVER EFFECT */
+
+.nav-links a:hover {
+  color: white;
+
+  transform: translateY(-2px);
+
+  border-color: rgba(255,255,255,0.15);
+
+  box-shadow:
+    0 8px 20px rgba(255, 86, 114, 0.28),
+    0 0 18px rgba(199, 123, 244, 0.25);
+}
+
+.nav-links a:hover::before {
+  opacity: 1;
+}
+
+/* ACTIVE PRESS EFFECT */
+
+.nav-links a:active {
+  transform: scale(0.96);
+}
+
+/* SHINY ANIMATION */
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  top: -120%;
+  left: -40%;
+
+  width: 30%;
+  height: 300%;
+
+  background: rgba(255,255,255,0.18);
+
+  transform: rotate(25deg);
+
+  transition: 0.7s;
+}
+
+.nav-links a:hover::after {
+  left: 130%;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+  nav {
+    width: 95%;
+    padding: 15px 22px;
+  }
+
+  .logo {
+    width: 155px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+
+    gap: 18px;
+
+    padding: 18px 20px;
+
+    top: 10px;
+  }
+
+  .logo {
+    width: 145px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+
+    padding: 10px 16px;
+
+    border-radius: 40px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+
+  nav {
+    width: 96%;
+    border-radius: 18px;
+  }
+
+  .logo {
+    width: 125px;
+  }
+
+  .nav-links {
+    gap: 8px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+
+    padding: 9px 14px;
+
+    letter-spacing: 0.3px;
+  }
+}
+
+
+/* =========================
+   HOME HEADER
+========================= */
+
+.home-header {
+  min-height: 100vh;
+  background: url("./images/app-link-background.svg")
+    no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 120px 20px 50px;
+}
+
+.home-header h1 {
+  font-size: 5rem;
+  max-width: 900px;
+  margin-bottom: 25px;
+}
+
+.home-header a {
+  text-decoration: none;
+  color: white;
+  background: #ff5672;
+  padding: 14px 35px;
+  border-radius: 40px;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.home-header a:hover {
+  background: #e54763;
+}
+
+.home-header div {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home-header img {
+  width: 170px;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+  padding: 100px 40px;
+  text-align: center;
+}
+
+.features h1 {
+  font-size: 3rem;
+  margin-bottom: 70px;
+  color: #424242;
+}
+
+.features-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+}
+
+.features-inner div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.features-inner img {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.features-inner p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* =========================
+   BANNERS
+========================= */
+
+.burger,
+.shakes {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 50px 20px;
+  color: white;
+}
+
+.burger {
+  background: url("./images/banner-1.webp")
+    no-repeat center center/cover;
+}
+
+.shakes {
+  background: url("./images/banner-2.webp")
+    no-repeat center center/cover;
+}
+
+.burger h1,
+.shakes h1 {
+  font-size: 5rem;
+  max-width: 1000px;
+}
+
+#btn {
+  margin-top: 50px;
+  padding: 15px 35px;
+  border-radius: 50px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#btn:hover {
+  background: white;
+  color: black;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  padding: 80px 40px 40px;
+}
+
+.footer > h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 60px;
+  color: #424242;
+}
+
+.footer-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.footer-item h3 {
+  margin-bottom: 20px;
+  color: #424242;
+}
+
+.footer-item p,
+.footer-item li,
+.footer-item span {
+  color: #666;
+  line-height: 1.8;
+}
+
+.footer-item ul {
+  list-style: none;
+}
+
+.footer-link {
+  color: #ff5672;
+}
+
+/* .email-container {
+  position: relative;
+  margin-top: 20px;
+} */
+
+.email-container {
+  position: relative;
+  margin-top: 25px;
+  width: 100%;
+  max-width: 520px;
+}
+
+/* .email-field {
+  width: 100%;
+  padding: 18px 25px;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+} */
+
+.email-field {
+  width: 100%;
+  height: 75px;
+  padding: 0 95px 0 28px;
+  border-radius: 60px;
+  border: 1px solid #d8d8d8;
+  outline: none;
+  font-size: 18px;
+  background: #fff;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.email-field:focus {
+  border-color: #ff5672;
+  box-shadow: 0 5px 25px rgba(255, 86, 114, 0.25);
+}
+
+
+
+/* .email-btn {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: url(https://nrzl4apc.knight-bite.com/main/res/index/email-btn.svg);
+  background-position: center;
+  transition: all 0.5s;
+} */
+
+.email-btn {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+
+  width: 69px;
+  height: 69px;
+
+  border-radius: 50%;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #c77bf4 0%, #ff5672 100%);
+
+  transition: all 0.35s ease;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 8px 20px rgba(255, 86, 114, 0.35);
+}
+
+/* PLAY TRIANGLE */
+
+.email-btn::before {
+  content: "";
+
+  width: 0;
+  height: 0;
+
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 16px solid white;
+
+  margin-left: 4px;
+}
+
+/* HOVER EFFECT */
+
+.email-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 28px rgba(255, 86, 114, 0.45);
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  nav {
+    padding: 14px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .nav-links {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .email-field {
+    height: 65px;
+    font-size: 16px;
+    padding: 0 80px 0 20px;
+  }
+
+  .email-btn {
+    width: 59px;
+    height: 59px;
+  }
+
+  .email-btn::before {
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 13px solid white;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .logo {
+    width: 135px;
+  }
+
+  .email-field {
+    height: 60px;
+    font-size: 15px;
+  }
+
+  .email-btn {
+    width: 54px;
+    height: 54px;
+  }
+}
+
+.profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.profile-tags img {
+  width: 32px;
+  transition: 0.3s;
+}
+
+.profile-tags img:hover {
+  transform: scale(1.1);
+}
+
+.footer-logo {
+  margin-top: 50px;
+}
+
+.copyright,
+.copyright-menu {
+  background: linear-gradient(90deg, #c77bf4 0%, #ff5672 100%);
+  color: white;
+  text-align: center;
+  padding: 18px;
+  margin-top: 40px;
+}
+
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.about-header {
+  min-height: 100vh;
+  background: url("./about-images/banner.webp")
+    no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  padding: 120px 60px;
+}
+
+.about-header h1 {
+  color: white;
+  font-size: 3.5rem;
+  max-width: 700px;
+  line-height: 1.3;
+}
+
+.about-grid {
+  padding: 80px 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.grid-item p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.locations h1,
+.follow-us h1 {
+  margin-bottom: 20px;
+  color: #424242;
+}
+
+.location {
+  font-weight: bold;
+  color: #ff5672;
+}
+
+/* =========================
+   MENU PAGE
+========================= */
+
+.content {
+  min-height: 100vh;
+  background: url("https://knight-bite.com/res/menu/banner.webp")
+    no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 40px 50px;
+}
+
+.menu {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 50px;
+}
+
+.menu-item {
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-item:hover {
+  transform: translateY(-10px);
+}
+
+.menu-item h1 {
+  color: white;
+  margin: 20px 0;
+  font-size: 2rem;
+}
+
+.menu-item img:first-child {
+  width: 120px;
+  margin: auto;
+}
+
+.menu-item img:last-child {
+  width: 30px;
+  margin: auto;
+}
+
+/* =========================
+   MENU MODAL
+========================= */
+
+.category-details {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: 90%;
+  max-width: 1200px;
+  height: 85vh;
+  background: white;
+  z-index: 1000;
+  border-radius: 20px;
+  overflow: hidden;
+  display: none;
+}
+
+.category-items-list {
+  overflow-y: auto;
+  padding: 30px;
+}
+
+.close-button {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #ff5672;
+}
+
+/* =========================
+   FRANCHISE PAGE
+========================= */
+
+.video-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.video-playback {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.head-div {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.pink-btn {
+  background: #ff5672;
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.pink-btn:hover {
+  background: #e54763;
+}
+
+.moto {
+  padding: 80px 30px;
+  text-align: center;
+}
+
+.moto p {
+  max-width: 700px;
+  margin: 20px auto;
+  line-height: 1.8;
+  color: #555;
+}
+
+.divider {
+  width: 90%;
+  height: 2px;
+  background: #ddd;
+  margin: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.grid-container div {
+  text-align: center;
+}
+
+.grid-container img {
+  width: 80px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.apply {
+  padding: 80px 30px;
+  text-align: center;
+}
+
+.apply-grid div:first-child {
+  width: 100%;
+  min-height: 450px;
+  background: url("https://knight-bite.com/res/franchise/apply-grid.png")
+    no-repeat center center/contain;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.footer-grid div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .burger h1,
+  .shakes h1,
+  .home-header h1 {
+    font-size: 3rem;
+  }
+
+  .about-header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .features,
+  .footer,
+  .about-grid {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .burger h1,
+  .shakes h1,
+  .home-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-header {
+    padding: 120px 20px;
+  }
+
+  .about-header h1 {
+    font-size: 2rem;
+  }
+
+  .video-playback {
+    height: 100vh;
+  }
+
+  .title {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-header img {
+    width: 130px;
+  }
+
+  .menu {
+    grid-template-columns: 1fr;
+  }
+
+  .features-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-details {
+    grid-template-columns: 1fr;
+  }
+}
