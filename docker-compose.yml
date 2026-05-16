@@ -1,0 +1,24 @@
+services:
+  knight-bite:
+    container_name: knight-bite
+
+    build: .
+
+    image: kabshataiyub/knight-bite:v${BUILD_NUMBER}
+
+    restart: always
+
+    ports:
+      - "9090:80"
+
+    volumes:
+      - my-vol:/usr/share/nginx/html
+
+    networks:
+      - my-network
+
+volumes:
+  my-vol:
+
+networks:
+  my-network:
