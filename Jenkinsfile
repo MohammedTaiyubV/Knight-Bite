@@ -61,7 +61,7 @@ pipeline {
         stage('Push Docker Image') {
 
             steps {
-
+            // everytime you need to change this inside script part based on your jenkins docker registry 
                 script {
 
                     withDockerRegistry(
