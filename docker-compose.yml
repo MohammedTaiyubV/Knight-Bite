@@ -11,14 +11,8 @@ services:
     ports:
       - "9090:80"
 
-    volumes:
-      - my-vol:/usr/share/nginx/html
-
     networks:
       - my-network
-
-volumes:
-  my-vol:
 
 networks:
   my-network:
