@@ -64,10 +64,10 @@ pipeline {
             // everytime you need to change this inside script part based on your jenkins docker registry 
                 script {
 
-                 // This step should not normally be used in your script. Consult the inline help for details.
-                  withDockerRegistry(credentialsId: '9ef48b2d-954a-4caf-ad27-d063d969bfa7') {
-                          sh "docker push ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:v${BUILD_NUMBER}"
-                  }     
+                  withDockerRegistry(credentialsId: 'Knight-Bite') {
+                      sh "docker push ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:v${BUILD_NUMBER}"
+                  }
+       
                 }
             }
         }
