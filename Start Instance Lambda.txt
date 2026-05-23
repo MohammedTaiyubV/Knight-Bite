@@ -1,0 +1,53 @@
+import boto3
+import time
+
+INSTANCE_ID = <'i-07df4db3267fb9407'>
+SNS_TOPIC_ARN = <'arn:aws:sns:us-east-1:652820459302:ec2-start-alert'>
+APP_PORT = '9090'
+
+ec2 = boto3.client('ec2')
+sns = boto3.client('sns')
+
+def lambda_handler(event, context):
+
+    # Start EC2
+    ec2.start_instances(InstanceIds=[INSTANCE_ID])
+
+    # Wait until running
+    waiter = ec2.get_waiter('instance_running')
+    waiter.wait(InstanceIds=[INSTANCE_ID])
+
+    # Small delay for public IP refresh
+    time.sleep(15)
+
+    # Get instance details
+    response = ec2.describe_instances(InstanceIds=[INSTANCE_ID])
+
+    public_ip = response['Reservations'][0]['Instances'][0]['PublicIpAddress']
+
+    app_url = f"http://{public_ip}:{APP_PORT}"
+
+    message = f"""
+EC2 Instance Started Successfully
+
+Start Time: 10:25 AM
+
+Instance will run till 11:55 AM
+
+Application URL:
+{app_url}
+
+Click the URL to access the application.
+"""
+
+    # Send SNS Email
+    sns.publish(
+        TopicArn=SNS_TOPIC_ARN,
+        Subject='EC2 Instance Started',
+        Message=message
+    )
+
+    return {
+        'statusCode': 200,
+        'body': 'EC2 started and notification sent'
+    }
