@@ -77,7 +77,7 @@ pipeline {
 
         success {
 
-            mail to: 'ashishwayachal14@gmail.com,kabshataiyub@gmail.com',
+            mail to: 'ashishwayachal14@gmail.com,kabshataiyub@gmail.com,areebabdurrahman@gmail.com',
 
             subject: "SUCCESS : ${JOB_NAME} #${BUILD_NUMBER}",
 
@@ -100,7 +100,7 @@ ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:v${BUILD_NUMBER}
 
         failure {
 
-            mail to: 'ashishwayachal14@gmail.com,kabshataiyub@gmail.com',
+            mail to: 'ashishwayachal14@gmail.com,kabshataiyub@gmail.com,areebabdurrahman@gmail.com',
 
             subject: "FAILED : ${JOB_NAME} #${BUILD_NUMBER}",
 
